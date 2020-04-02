@@ -1,4 +1,7 @@
 allow platform_app system_app_data_file:dir getattr;
 
-#FPSinfo
-allow platform_app sysfs:file  {read open getattr};
+# Face Unlock
+get_prop(platform_app, camera_prop)
+
+# FPS
+allow platform_app sysfs_fps:file { getattr open read };
