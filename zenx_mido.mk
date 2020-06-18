@@ -30,6 +30,9 @@ TARGET_BOOT_ANIMATION_RES := 1080
 #Bleed Zenx
 ZENX_BUILD_TYPE := Official
 
+# Google Recorder
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mido
 PRODUCT_NAME := zenx_mido
