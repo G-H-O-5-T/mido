@@ -68,6 +68,14 @@
 /sys/devices/soc/leds-atc-25/driver/leds-atc-25/leds/charging/max_brightness		u:object_r:sysfs_chargeled:s0
 /sys/devices/platform/soc/soc:qcom,camera-flash/leds/torch-light1/max_brightness		u:object_r:sysfs_yintensity:s0
 
+# Notification LED
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/blue/max_brightness  u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/red/max_brightness  u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/green/max_brightness  u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/blue/brightness  u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/red/brightness  u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/green/brightness  u:object_r:sysfs_graphics:s0
+
 # Vibration
 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator(/.*)?           u:object_r:sysfs_vibrator:s0
 /sys/class/timed_output/vibrator/vmax_mv             u:object_r:sysfs_vibrator:s0

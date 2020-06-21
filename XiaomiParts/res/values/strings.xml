@@ -310,4 +310,8 @@
     <string name="selinux_persistence_summary">Restore the above set sepolicy mode on each boot</string>
     <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
     <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
+
+    <!-- Notification LED brightness -->
+    <string name="notification_title">Notification LED</string>
+    <string name="notification_led_title">LED brightness</string>
 </resources>
