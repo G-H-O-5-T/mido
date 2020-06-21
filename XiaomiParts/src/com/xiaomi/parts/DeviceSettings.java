@@ -99,6 +99,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String NOTIF_LED_RED_PATH = "/sys/class/leds/red/max_brightness";
     public static final String NOTIF_LED_GREEN_PATH = "/sys/class/leds/green/max_brightness";
 
+    public static final int MIN_LED = 1;
+    public static final int MAX_LED = 255;
+
     public static final String HIGH_PERF_AUDIO = "highperfaudio";
     public static final String HIGH_AUDIO_PATH = "/sys/module/snd_soc_wcd9330/parameters/high_perf_mode";
 
@@ -471,9 +474,9 @@ public class DeviceSettings extends PreferenceFragment implements
                 break;
 
             case PREF_NOTIF_LED:
-                FileUtils.setValue(NOTIF_LED_BLUE_PATH, (int) value);
-                FileUtils.setValue(NOTIF_LED_RED_PATH, (int) value);
-                FileUtils.setValue(NOTIF_LED_GREEN_PATH, (int) value);
+                FileUtils.setValue(NOTIF_LED_BLUE_PATH, (int) value / 100.0 * (MAX_LED - MIN_LED) + MIN_LED);
+                FileUtils.setValue(NOTIF_LED_RED_PATH, (int) value / 100.0 * (MAX_LED - MIN_LED) + MIN_LED);
+                FileUtils.setValue(NOTIF_LED_GREEN_PATH, (int) value / 100.0 * (MAX_LED - MIN_LED) + MIN_LED);
                 break;
 
             case PREF_SELINUX_MODE:
