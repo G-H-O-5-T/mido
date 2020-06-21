@@ -1,0 +1,23 @@
+[ 
+  { 
+    "remote": "github", 
+    "repository": "Nicklas373/kernel_xiaomi_msm8953-4.9", 
+    "target_path": "kernel/xiaomi/msm8953", 
+    "branch": "lineage-17.1"
+  },
+
+  {
+    "remote": "github",
+    "repository": "ZenX-Devices/device_xiaomi_mido",
+    "target_path" : "device/xiaomi/mido",
+    "branch": "4.9"
+  },
+
+  {
+   "remote": "github",
+   "repository": "ZenX-Devices/vendor_xiaomi_mido",
+   "target_path" : "vendor/xiaomi",
+   "branch": "4.9"
+  }
+]
+
