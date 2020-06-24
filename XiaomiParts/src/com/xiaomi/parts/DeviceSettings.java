@@ -143,6 +143,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private VibratorStrengthPreference mVibratorStrength;
     private VibratorCallStrengthPreference mVibratorCallStrength;
     private VibratorNotifStrengthPreference mVibratorNotifStrength;
+    private NotificationLedSeekBarPreference mLEDBrightness;
     private Preference mKcal;
     private SecureSettingListPreference mSPECTRUM;
     private Preference mAmbientPref;
@@ -170,11 +171,11 @@ public class DeviceSettings extends PreferenceFragment implements
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
 
-        if (FileUtils.fileWritable(NOTIF_LED_BLUE_PATH) && FileUtils.fileWritable(NOTIF_LED_RED_PATH) && FileUtils.fileWritable(NOTIF_LED_GREEN_PATH)) {
-            NotificationLedSeekBarPreference notifLedBrightness =
-                    (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
-            notifLedBrightness.setOnPreferenceChangeListener(this);
-        } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_NOTIF)); }
+        mLEDBrightness = (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
+        mLEDBrightness.setEnabled(FileUtils.fileWritable(NOTIF_LED_BLUE_PATH) &&
+              FileUtils.fileWritable(NOTIF_LED_RED_PATH) &&
+                  FileUtils.fileWritable(NOTIF_LED_GREEN_PATH));
+        mLEDBrightness.setOnPreferenceChangeListener(this);
 
         mWhiteTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_WHITE_TORCH_BRIGHTNESS);
         mWhiteTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH));
